@@ -1,1 +1,15 @@
-<h1>Hello</h1>
+<div class="header">
+  <h1>Personal Blog</h1>
+  <a href="/add">+ Add</a>
+</div>
+
+<ul class="blog_content">
+  <% articles.map(article => { %>
+  <li>
+    <a href="/article/<%= article.id %>" class="blog_content_item">
+      <span class="blog_title"><%= article.title %></span>
+      <span class="blog_created_at"><%= article.createdAt %></span>
+    </a>
+  </li>
+  <% }); %>
+</ul>
