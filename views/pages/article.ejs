@@ -1,5 +1,5 @@
 <div class="article_content">
   <h1 class="article_title"><%= articles.title %></h1>
-  <span class="article_created_at"><%= articles.createdAt %></span>
+  <span class="article_created_at"><%= parseDate(articles.createdAt) %></span>
   <p class="article_description"><%= articles.description %></p>
 </div>

@@ -8,7 +8,7 @@
   <li>
     <a href="/article/<%= article.id %>" class="blog_content_item">
       <span class="blog_title"><%= article.title %></span>
-      <span class="blog_created_at"><%= article.createdAt %></span>
+      <span class="blog_created_at"><%= parseDate(article.createdAt) %></span>
     </a>
   </li>
   <% }); %>
