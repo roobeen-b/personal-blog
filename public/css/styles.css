@@ -9,29 +9,55 @@ html {
   margin: auto;
   padding: 1rem;
 }
+.container {
+  padding: 1rem;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+ul li {
+  font-size: 1.5rem;
+  font-weight: bold;
+  list-style-type: none;
+  a {
+    text-decoration: none;
+  }
+
+  .add_form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .add_new_form {
+    margin-top: 1rem;
+  }
+}
 
 .header {
   display: flex;
   padding-bottom: 1rem;
   justify-content: space-between;
-  border-bottom: 1px solid lightgray;
+  align-items: center;
 }
-
-ul li {
-  font-size: 1.5rem;
-  font-weight: bold;
-  list-style-type: none;
-}
-a {
+.header a {
   text-decoration: none;
+  color: black;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
-.add_new_form {
-  margin-top: 1rem;
-}
-.add_form {
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
+.header a:hover {
+  background-color: #e0e0e0;
 }
 
 .add_form .add_form_input {

@@ -117,7 +117,6 @@ app.get("/article/:id", async (req: express.Request, res: express.Response) => {
     const article = (await readAllFiles(FILE_PATH)).find(
       (article) => article.id === Number(id)
     );
-    console.log(article, "article");
     if (article) {
       const html = await renderWithLayout("article", article);
       res.send(html);
