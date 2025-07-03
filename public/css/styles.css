@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -13,6 +15,9 @@ html {
   width: 60%;
   margin: auto;
   padding: 1rem;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-family: "Josefin Sans", sans-serif;
 }
 .container {
   padding: 1rem;
@@ -53,6 +58,13 @@ ul li {
   background-color: #e0e0e0;
 }
 
+.add_form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-direction: column;
+}
+
 .add_form .add_form_input {
   display: flex;
   flex-direction: column;
@@ -67,6 +79,11 @@ ul li {
   padding: 0.5rem;
   border-radius: 5px;
   border-color: lightgray;
+}
+
+.add_form button {
+  cursor: pointer;
+  padding: 0.5rem 0;
 }
 
 .blog_content {
