@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 html {
   width: 60%;
   margin: auto;
@@ -25,18 +30,6 @@ ul li {
   font-size: 1.5rem;
   font-weight: bold;
   list-style-type: none;
-  a {
-    text-decoration: none;
-  }
-
-  .add_form {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-  }
-  .add_new_form {
-    margin-top: 1rem;
-  }
 }
 
 .header {
@@ -82,11 +75,17 @@ ul li {
 
 .blog_content_item {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .blog_content_item .blog_title {
   font-weight: bold;
   font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+.blog_content_item .blog_title:hover {
+  color: #007bff;
+  cursor: pointer;
 }
 .blog_content_item .blog_created_at {
   font-size: 1.2rem;
