@@ -112,6 +112,11 @@ ul li {
   font-size: 1.2rem;
   color: rgb(134, 134, 134);
 }
+.blog_content_item_actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
 .blog_content_item_actions .button {
   cursor: pointer;
   padding: 0.5rem;

@@ -1,0 +1,7 @@
+{
+  "id": 1751646739000,
+  "title": "fs.unlink()",
+  "description": "fs.unlink() is a function within Node.js's built-in File System (fs) module, used to delete files or symbolic links from the file system. It is important to note that fs.unlink() operates on files and symbolic links, not directories. For deleting directories, fs.rmdir() or fs.rm() (with recursive: true for non-empty directories) should be used.",
+  "createdAt": "2025-07-04T16:32:19.000Z",
+  "updatedAt": "2025-07-04T16:32:19.000Z"
+}

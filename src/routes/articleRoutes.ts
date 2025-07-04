@@ -7,6 +7,7 @@ import {
   getArticleById,
   getEditArticleForm,
   getAdminHome,
+  deleteArticle,
 } from "../controllers/articleController";
 
 const router = Router();
@@ -18,5 +19,6 @@ router.post("/edit-form", editArticle);
 router.post("/submit-form", submitForm);
 router.get("/article/:id", getArticleById);
 router.get("/edit/:id", getEditArticleForm);
+router.post("/delete/:id", deleteArticle);
 
 export default router;

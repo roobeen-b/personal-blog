@@ -2,7 +2,12 @@ import { Request, Response } from "express";
 
 import { TArticle } from "../types";
 import { renderWithLayout } from "../utils/render";
-import { editBlog, readAllArticles, saveBlog } from "../utils/fileService";
+import {
+  deleteBlog,
+  editBlog,
+  readAllArticles,
+  saveBlog,
+} from "../utils/fileService";
 
 export const getHome = async (req: Request, res: Response) => {
   try {
@@ -110,5 +115,22 @@ export const editArticle = async (req: Request, res: Response) => {
   } catch (err) {
     console.error(err);
     res.status(500).send("Failed to edit article");
+  }
+};
+
+export const deleteArticle = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    if (!id) res.status(404).send("Article not found");
+
+    const articles = await readAllArticles();
+    const article = articles.find((a) => a.id === Number(id));
+    if (article) {
+      await deleteBlog(article.id);
+      res.redirect("/");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Failed to delete article");
   }
 };

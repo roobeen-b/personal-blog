@@ -1,5 +1,5 @@
 import path from "path";
-import { mkdir, readdir, readFile, stat, writeFile } from "fs/promises";
+import { mkdir, readdir, readFile, stat, unlink, writeFile } from "fs/promises";
 
 import { TArticle } from "../types";
 
@@ -33,4 +33,9 @@ export const readAllArticles = async (): Promise<TArticle[]> => {
   }
 
   return articles;
+};
+
+export const deleteBlog = async (id: number) => {
+  const filePath = path.join(FILE_PATH, `${id}-blog.json`);
+  await unlink(filePath);
 };
