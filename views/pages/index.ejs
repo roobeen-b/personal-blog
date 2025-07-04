@@ -1,27 +1,14 @@
 <div class="header">
   <h1>Personal Blog</h1>
-  <a href="/add">+ Add</a>
 </div>
 
 <ul class="blog_content">
   <% articles.map(article => { %>
-  <li class="blog_content_item">
-    <a href="/article/<%= article.id %>" class="blog_content_item_info">
+  <li class="normal_blog_content_item">
+    <a href="/article/<%= article.id %>" class="normal_blog_content_item_info">
       <span class="blog_title"><%= article.title %></span>
       <span class="blog_created_at"><%= parseDate(article.createdAt) %></span>
     </a>
-    <div class="blog_content_item_actions">
-      <a href="/edit/<%= article.id %>" class="button edit">Edit</a>
-      <form action="/delete/<%= article.id %>" method="post">
-        <button
-          type="submit"
-          class="button delete"
-          onClick="return confirm('Are you sure you want to delete?')"
-        >
-          Delete
-        </button>
-      </form>
-    </div>
   </li>
   <% }); %>
 </ul>

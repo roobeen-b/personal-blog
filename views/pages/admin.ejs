@@ -12,7 +12,15 @@
     </a>
     <div class="blog_content_item_actions">
       <a href="/edit/<%= article.id %>" class="button edit">Edit</a>
-      <button class="button delete">Delete</button>
+      <form action="/delete/<%= article.id %>" method="post">
+        <button
+          type="submit"
+          class="button delete"
+          onClick="return confirm('Are you sure you want to delete?')"
+        >
+          Delete
+        </button>
+      </form>
     </div>
   </li>
   <% }); %>

@@ -134,3 +134,17 @@ export const deleteArticle = async (req: Request, res: Response) => {
     res.status(500).send("Failed to delete article");
   }
 };
+
+export const adminHome = async (req: Request, res: Response) => {
+  try {
+    const articles = (await readAllArticles()).sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+    const html = await renderWithLayout("admin", articles);
+    res.send(html);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Render error");
+  }
+};
