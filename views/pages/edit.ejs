@@ -1,0 +1,30 @@
+<div class="add_new_form">
+  <h2>Edit blog</h2>
+  <form class="add_form" method="POST" action="/edit-form">
+    <input type="hidden" name="id" value="<%= articles.id %>">
+    <div class="add_form_input">
+      <label for="title">Title</label>
+      <input
+        required
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Enter title"
+        value="<%= articles.title %>"
+      />
+    </div>
+
+    <div class="add_form_input">
+      <label for="description">Description</label>
+      <textarea
+        rows="4"
+        required
+        id="description"
+        name="description"
+        value=""
+      ><%= articles.description %></textarea>
+    </div>
+
+    <button type="submit">Edit</button>
+  </form>
+</div>

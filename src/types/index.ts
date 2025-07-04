@@ -3,6 +3,7 @@ type TArticle = {
   title: string;
   description: string;
   createdAt: string;
+  updatedAt: string;
 };
 
 export type { TArticle };

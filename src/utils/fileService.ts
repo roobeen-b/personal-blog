@@ -12,6 +12,13 @@ export const saveBlog = async (article: TArticle) => {
   await writeFile(filePath, JSON.stringify(article, null, 2));
 };
 
+export const editBlog = async (article: TArticle) => {
+  const fileName = `${article.id}-blog.json`;
+  const filePath = path.join(FILE_PATH, fileName);
+  await mkdir(FILE_PATH, { recursive: true });
+  await writeFile(filePath, JSON.stringify(article, null, 2));
+};
+
 export const readAllArticles = async (): Promise<TArticle[]> => {
   const files = await readdir(FILE_PATH);
   const articles: TArticle[] = [];
