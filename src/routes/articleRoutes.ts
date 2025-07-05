@@ -14,12 +14,12 @@ import { auth } from "../utils/auth";
 const router = Router();
 
 router.get("/", getHome);
-router.get("/add", getAddForm);
+router.get("/add", auth, getAddForm);
 router.get("/admin", auth, adminHome);
-router.post("/edit-form", editArticle);
-router.post("/submit-form", submitForm);
-router.post("/delete/:id", deleteArticle);
+router.post("/edit-form", auth, editArticle);
+router.post("/submit-form", auth, submitForm);
+router.post("/delete/:id", auth, deleteArticle);
 router.get("/article/:id", getArticleById);
-router.get("/edit/:id", getEditArticleForm);
+router.get("/edit/:id", auth, getEditArticleForm);
 
 export default router;
